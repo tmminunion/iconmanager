@@ -40,7 +40,7 @@ export default function Gallery({ data }) {
   )
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const searchResults = await getProducts()
 
   return {
