@@ -41,7 +41,7 @@ export default function Gallery({ data }) {
 }
 
 export async function getStaticProps() {
-  const searchResults = await getProducts('coffee')
+  const searchResults = await getProducts()
 
   return {
     props: {

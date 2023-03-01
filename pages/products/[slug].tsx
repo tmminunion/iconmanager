@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import getProducts from '../../sfcc.js'
+import getProductsID from '../../sfccid.js'
 
 export default function Product({ product }) {
   return (
@@ -9,7 +9,7 @@ export default function Product({ product }) {
           <Image
             alt="coffee"
             className="rounded-lg"
-            src={product.imageGroups[0].images[0].link}
+            src={product.filepath}
             width={560}
             height={640}
           />
@@ -23,7 +23,7 @@ export default function Product({ product }) {
             <div className="mt-10 mb-5 border-t border-gray-200 pt-10 font-bold">
               Description
             </div>
-            <p className="max-w-xl">{product.longDescription}</p>
+            <p className="max-w-xl">{product.imgid}</p>
           </div>
         </div>
       </div>
@@ -31,27 +31,14 @@ export default function Product({ product }) {
   )
 }
 
-export async function getStaticProps({ params }) {
-  const searchResults = await getProducts(params.slug)
-  const coffeeProduct = searchResults[0]
+export async function getServerSideProps(context) {
+console.log(context.params.slug)
+  const searchResults = await getProductsID(context.params.slug)
+   const coffeeProduct = searchResults[0]
 
   return {
     props: {
-      product: coffeeProduct,
+      product: searchResults,
     },
-  }
-}
-
-export async function getStaticPaths() {
-  const coffeeProducts = await getProducts('coffee')
-  let fullPaths = []
-
-  for (let product of coffeeProducts) {
-    fullPaths.push({ params: { slug: product.id } })
-  }
-
-  return {
-    paths: fullPaths,
-    fallback: 'blocking',
   }
 }
