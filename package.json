@@ -6,6 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@faker-js/faker": "^7.6.0",
     "@next/font": "latest",
     "commerce-sdk": "^2.8.0",
     "fs": "^0.0.1-security",
