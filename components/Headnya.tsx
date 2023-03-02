@@ -10,7 +10,7 @@ export default function Headnya() {
     <div className="container px-4 mx-auto md:flex md:items-center">
 
       <div className="flex justify-between items-center">
-        <Link href="/" class="font-bold text-xl text-indigo-600">Gallery | Bungtemin.net</Link>
+        <Link href="/" className="font-bold text-xl text-indigo-600">Gallery | Bungtemin.net</Link>
         <button className="border border-solid border-gray-600 px-3 py-1 rounded text-gray-600 opacity-50 hover:opacity-75 md:hidden" id="navbar-toggle">
           <i className="fas fa-bars"></i>
         </button>

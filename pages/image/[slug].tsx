@@ -1,12 +1,13 @@
 import Image from 'next/image'
+import Header from '../../components/Header'
 import getProductsID from '../../sfccid.js'
-import Headnya from '../../components/Headnya.tsx'
+
 
 
 export default function Product({ product }) {
   return (
     <>
-<Headnya />
+ <Header />
       
     <div className="flex h-screen flex-col justify-between">
 

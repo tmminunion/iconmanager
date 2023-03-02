@@ -3,7 +3,7 @@ import Collection from '../components/collection'
 import Header from '../components/Header'
 import Hero from '../components/hero'
 import Main from '../components/main'
-import ProductCard from '../components/ProductCard'
+
 import getProducts from '../sfcc.js'
 
 export default function Gallery({ data }) {
