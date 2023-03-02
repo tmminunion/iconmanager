@@ -3,6 +3,7 @@ import Collection from '../components/collection'
 import Header from '../components/Header'
 import Hero from '../components/hero'
 import Main from '../components/main'
+import Modal from '../components/modol'
 
 import getProducts from '../sfcc.js'
 
@@ -26,7 +27,7 @@ export default function Gallery({ data }) {
         <Collection data={data} />
       </Main>
       <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-        
+        <Modal />
         
       </div>
     </>
